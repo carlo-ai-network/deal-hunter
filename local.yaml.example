@@ -1,0 +1,32 @@
+# Deal Hunter — Machine-Specific Configuration
+# NOT committed to Git. Copy local.yaml.example and fill in your values.
+
+# ============================================================
+# HARDWARE
+# ============================================================
+hardware:
+  pc_mac_address: "AA:BB:CC:DD:EE:FF"       # Replace with actual PC MAC address
+  pc_tailscale_ip: "100.75.153.116"
+  orchestrator_tailscale_ip: "100.120.55.116"
+  ollama_port: 11434
+
+# ============================================================
+# DATABASE (machine-specific path)
+# ============================================================
+database:
+  path: "/Users/carlo/deal-hunter/data/deal_hunter.db"
+
+# ============================================================
+# PORT ASSIGNMENTS (reference — also used by service configs)
+# ============================================================
+ports:
+  inbox_api: 9823              # PC — Headless Inbox (existing)
+  wol_relay: 9824              # MacBook — WOL relay (existing)
+  orchestrator: 9825           # MacBook — Deal Hunter dashboard + API
+  ollama: 11434                # PC — Ollama (existing)
+
+# ============================================================
+# NOTIFICATIONS (override base_url when self-hosting)
+# ============================================================
+# notifications:
+#   base_url: "http://100.120.55.116:8080"   # Self-hosted ntfy.sh
